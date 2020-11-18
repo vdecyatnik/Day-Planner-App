@@ -14,24 +14,24 @@ var currentHourOne = parseInt(moment().format("H"));
 console.log(currentHourOne);
 
 //  Loop over the hours of the day from i=9 to i <-=17
+var whatTime = (".timeEl");
 
-//  var i =9
 
 function checkTime() {
 
 
-    
+   
 
     for (var i = 9; i < 18; i++) {
 
         if (i < currentHourOne) {
-            $(textInput).addClass("past");
+            $(whatTime).addClass("past");
         } else if
             (i > currentHourOne); {
-            $(textInput).addClass("future");
+            $(whatTime).addClass("future");
         } 
-        (i === currentHourOne);
-        $(textInput).addClass("present");
+        (i == currentHourOne);
+        $(whatTime).addClass("present");
 
     }
 }
@@ -39,27 +39,32 @@ function checkTime() {
 
 
 
-
 checkTime();
 
-//  Element Id = "hour-" +i
 
-//  Currently checking 9AM< current hour
-//  equal to or greater than current hour
-
-//  9AM is in the past 
-//  Select matching element $(ElementID).addClass("is-past"); OR
-// $(ElementId).css("background");
-
-// .is-past, is-present, is-future
-
-//  $( Element ID)
 
 //get from local storage and navigate to text area and assign the value
-
-
-
 // add  a click event ON A PARENT ELEMENT that can listen to my save button clicks
+// Added eventListener to parents Element 
+// Save text-input to local storage
+$(".saveBtn").on("click" ,  function (e) {
+console.log("clicked element");
+
+
+var clickedSaveButton = $(event.target).data("hour")
+console.log(clickedSaveButton);
+var value =$(event.target).prev().val();
+
+var planAdded = $("#text").val();
+console.log(planAdded);
+
+localStorage.setItem( clickedSaveButton, value);
+//localStorage.setItem( )
+
+
+});
+
+//function saveInfo(){
 
 //How to get from correct button to the hour of the day so save to the correct location
 
@@ -67,13 +72,9 @@ checkTime();
 
 //WHEN the user clicks a save button 
 
-//THEN I need to save the associated textfor the associated time
-
-// GET the current hour from the event.target (the clicked button)
-// var theClickedHour = $(event.target).data("hour")
 
 //OR var the ClickedHour = $(event.target).parent().attr("id")
 
 //var value =$(event.target).prev().val();
 
-//localStorage.setItem("planner-hour-"+ theClickedHour , value );
+//localStorage.setItem("planner-hour-"+ theClickedHour , value)
