@@ -1,3 +1,4 @@
+
 //  Get the current hour of the day using moment.js
 
 var currentMoment = moment();
@@ -13,33 +14,41 @@ console.log(today);
 var currentHourOne = parseInt(moment().format("H"));
 console.log(currentHourOne);
 
-//  Loop over the hours of the day from i=9 to i <-=17
-var whatTime = (".timeEl");
+//Loop over the hours of 9a to 5pm
+
+//var i=9;
+//Element Id = "hour-" + i;
+//Currently checking 9am < CurrentHourOne
+//9 am is in the past
+//$(elementId)
 
 
-function checkTime() {
+for (var i=9;i<18;i++){
 
 
-   
+    var elementId = $("#hour-" + i);
+    var currentHourOne = parseInt(moment().format("H"));
 
-    for (var i = 9; i < 18; i++) {
+    if (i<currentHourOne){
+        $(elementId).addClass("past");
 
-        if (i < currentHourOne) {
-            $(whatTime).addClass("past");
-        } else if
-            (i > currentHourOne); {
-            $(whatTime).addClass("future");
-        } 
-        (i == currentHourOne);
-        $(whatTime).addClass("present");
-
+    } if (i>currentHourOne ){
+        $(elementId).addClass("future");
+    } if (i === currentHourOne) {
+        $(elementId).addClass("present");
     }
+    console.log(elementId);
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
-checkTime();
 
 
 
@@ -48,6 +57,7 @@ checkTime();
 // Added eventListener to parents Element 
 // Save text-input to local storage
 $(".saveBtn").on("click" ,  function (e) {
+    
 console.log("clicked element");
 
 
@@ -63,7 +73,7 @@ localStorage.setItem( clickedSaveButton, value);
 
 
 });
-
+   
 //function saveInfo(){
 
 //How to get from correct button to the hour of the day so save to the correct location
