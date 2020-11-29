@@ -43,18 +43,18 @@ for (var i = 9; i < 18; i++) {
 
     //comparing moment JS currentHourOne to current hour on the planner.
     //Used id= "hour-9" +i; to loop through 9am-5pm
-    var elementId = $("#hour-" + i);
+    var displayEl = $("#hour-" + i);
     var currentHourOne = parseInt(moment().format("H"));
 
     if (i < currentHourOne) {
-        $(elementId).addClass("past");
+        $(displayEl).addClass("past");
 
     } if (i > currentHourOne) {
-        $(elementId).addClass("future");
+        $(displayEl).addClass("future");
     } if (i === currentHourOne) {
-        $(elementId).addClass("present");
+        $(displayEl).addClass("present");
     }
-    console.log(elementId);
+    console.log(displayEl);
 
      if (localStorage.getItem("saved-hour-" + i)){
         $("#data-text-" + i).val(localStorage.getItem("saved-hour-" + i))
