@@ -18,26 +18,7 @@ console.log(currentHourOne);
 
 
 
-//Loop over the hours of 9a to 5pm
 
-//var i=9;
-//Element Id = "hour-" + i;
-//Currently checking 9am < CurrentHourOne
-//9 am is in the past
-//$(elementId)
-
-
-//function showSavedPlanArray(){
-
-
-//var showPlans= JSON.parse(localStorage.getItem(savedPlanKey));
-
-//console.log(showPlans);
-
-
-
-
-//}
 
 for (var i = 9; i < 18; i++) {
 
@@ -56,17 +37,13 @@ for (var i = 9; i < 18; i++) {
     }
     console.log(displayEl);
 
-     if (localStorage.getItem("saved-hour-" + i)){
+    if (localStorage.getItem("saved-hour-" + i)) {
         $("#data-text-" + i).val(localStorage.getItem("saved-hour-" + i))
-     }
-     
+    }
+
 
 
 }
-//get from local storage and navigate to text area and assign the value
-// add  a click event ON A PARENT ELEMENT that can listen to my save button clicks
-// Added eventListener to parents Element 
-// Save text-input to local storage
 
 //added a click event on the save buttons to and matched them to the current hour using data-hour="9"
 $(".saveBtn").on("click", function (e) {
@@ -87,18 +64,15 @@ $(".saveBtn").on("click", function (e) {
 })
 
 
-function clearLocalStorage(){
+function clearLocalStorage() {
 
-   
+
     localStorage.clear();
- 
+
 }
 
 
-    
 
 
-//use object or array to save data and use json stringify to get it out of local storage
-//OR var the ClickedHour = $(event.target).parent().attr("id")
-//var value =$(event.target).prev().val();
-//localStorage.setItem("planner-hour-"+ theClickedHour , value)
+
+
