@@ -39,6 +39,9 @@ for (var i = 9; i < 18; i++) {
 
     if (localStorage.getItem("saved-hour-" + i)) {
         $("#data-text-" + i).val(localStorage.getItem("saved-hour-" + i))
+
+      
+        
     }
 
 
@@ -66,7 +69,7 @@ $(".saveBtn").on("click", function (e) {
 
 function clearLocalStorage() {
 
-
+        
     localStorage.clear();
 
 }
