@@ -8,7 +8,7 @@
 
 -[Images](#Images)
 
--[Link to my Repository](#Link-to-my-Repository)
+-[Link to my Repository](#Link-to-my-repository)
 
 -[Link to the Live URL](#link-to-the-live-url)
 

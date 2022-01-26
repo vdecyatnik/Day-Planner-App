@@ -1,5 +1,4 @@
 //  Get the current hour of the day using moment.js
-
 var currentMoment = moment();
 var date = currentMoment.format();
 
@@ -31,36 +30,28 @@ for (var i = 9; i < 18; i++) {
   if (localStorage.getItem("saved-hour-" + i)) {
     $("#data-text-" + i).val(localStorage.getItem("saved-hour-" + i));
   }
-
-  
-  
-
-
-  
 }
 
 //added a click event on the save buttons to and matched them to the current hour using data-hour="9"
-$(".saveBtn").on("click", function (e) {
+$(".saveBtn").on("click", function (event) {
   console.log("clicked element");
 
   var clickedSaveButton = $(event.target).data("hour");
   console.log(clickedSaveButton);
   var value = $(event.target).prev().val();
+  console.log(value)
 
   var planAdded = $("#textInput").val();
+
   console.log(planAdded);
 
   localStorage.setItem("saved-hour-" + clickedSaveButton, value);
   console.log(localStorage);
 });
 
-$(".deleteButton").on("click", function (e){
-for (var i = 9; i < 18; i++){
-  console.log("delete");
-  localStorage.clear($("#data-text-" + i).val(""));
-}
-
-
-
-
-})
+$(".deleteButton").on("click", function (e) {
+  for (var i = 9; i < 18; i++) {
+    console.log("delete");
+    localStorage.clear($("#data-text-" + i).val(""));
+  }
+});
